@@ -1,6 +1,6 @@
 # AWS Service Console
 
-React + Vite frontend preserving the existing Service Console layout. The SMS OTP → API & SDK section connects to the Node/Express backend in `digitallifeharsh-sys/awsconsole-backend`.
+This repository contains the existing React + Vite Service Console UI. The SMS OTP → API & SDK page is connected to `digitallifeharsh-sys/awsconsole-backend` for 2Factor configuration, configuration CRUD, and test SMS/voice calls.
 
 ## Run locally
 
@@ -10,6 +10,6 @@ npm install
 npm run dev
 ```
 
-Vite proxies `/api/*` to `http://localhost:5000` by default. Start the backend first and configure its `.env` and MySQL database. For another backend host, set `VITE_BACKEND_PROXY_TARGET` before starting Vite.
+Start the backend on port 5000 first. Vite proxies `/api` to `http://localhost:5000`. Change `VITE_BACKEND_PROXY_TARGET` in `.env` when the backend runs elsewhere.
 
-The 2Factor configuration page supports nickname, API key, SMS/call tokens, template IDs, configuration CRUD and real SMS/voice tests. Provider credentials are sent only to the backend; secrets are never returned in plaintext by the API.
+The API key, SMS token and call token are sent to the backend only. The backend encrypts secrets at rest and returns masked values. Real provider tests require valid 2Factor credentials, approved templates and available credits.
