@@ -1,11 +1,5 @@
 import axios from 'axios';
 
-let consoleAdminToken = '';
-
-export const setConsoleAdminToken = token => {
-  consoleAdminToken = String(token || '').trim();
-};
-
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api/v1').replace(/\/$/, '');
 
 const client = axios.create({
@@ -13,15 +7,6 @@ const client = axios.create({
   withCredentials: true,
   headers: { 'Content-Type': 'application/json' },
   timeout: 15000,
-});
-
-client.interceptors.request.use(config => {
-  if (consoleAdminToken) {
-    config.headers['X-Console-Admin-Key'] = consoleAdminToken;
-  } else {
-    delete config.headers['X-Console-Admin-Key'];
-  }
-  return config;
 });
 
 const request = async (path, options = {}) => {
