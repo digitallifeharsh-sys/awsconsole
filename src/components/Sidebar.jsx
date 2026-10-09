@@ -1,4 +1,4 @@
-import { BarChart3, BookOpen, Boxes, ChevronDown, ChevronRight, CreditCard, Home, KeyRound, LifeBuoy, Mail, MessageSquare, Settings, ShieldCheck, Smartphone, Users, Wallet, Zap } from 'lucide-react';
+import { Activity, BarChart3, BookOpen, Boxes, ChevronDown, ChevronRight, CreditCard, Home, KeyRound, LifeBuoy, Mail, MessageSquare, Settings, ShieldCheck, Smartphone, Users, Wallet, Zap } from 'lucide-react';
 import { useState } from 'react';
 import { navigation } from '../data/navigation.js';
 const icons={home:Home,services:Boxes,api:KeyRound,customers:Users,billing:Wallet,analytics:BarChart3,docs:BookOpen,support:LifeBuoy,settings:Settings};
