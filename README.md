@@ -10,6 +10,6 @@ npm install
 npm run dev
 ```
 
-Start the backend on port 5000 first. Vite proxies `/api` to `http://localhost:5000`. Change `VITE_BACKEND_PROXY_TARGET` in `.env` when the backend runs elsewhere.
+Start the backend on port 5000 first. In the backend `.env`, set `CONSOLE_ADMIN_TOKEN` to a long random secret and `CREDENTIAL_ENCRYPTION_KEY` to the output of `openssl rand -hex 32`. Vite proxies `/api` to `http://localhost:5000`; change `VITE_BACKEND_PROXY_TARGET` when needed. Open SMS OTP → API & SDK, enter the same backend admin token in Backend Admin Key, and click Connect & Load.
 
 The API key, SMS token and call token are sent to the backend only. The backend encrypts secrets at rest and returns masked values. Real provider tests require valid 2Factor credentials, approved templates and available credits.
