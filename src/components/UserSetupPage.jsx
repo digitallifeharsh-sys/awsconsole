@@ -70,7 +70,7 @@ export default function UserSetupPage() {
             <div className="flex items-start gap-2 rounded-xl bg-amber-50 p-3 text-xs leading-5 text-amber-800"><LockKeyhole size={16} className="mt-0.5 shrink-0"/><span>API secrets are encrypted by the backend before storage. Login is not implemented yet, so this public form should only be used in a controlled test environment until authentication and ownership checks are added.</span></div>
           </div>
         </section>
-        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between"><p className="text-xs text-slate-400">Fields marked * are required.</p><button type="submit" disabled={saving} className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60">{saving ? <LoaderCircle className="animate-spin" size={17}/> : <Save size={17}/ >}{saving ? 'Saving profile…' : 'Save profile & configuration'}</button></div>
+        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between"><p className="text-xs text-slate-400">Fields marked * are required.</p><button type="submit" disabled={saving} className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60">{saving ? <LoaderCircle className="animate-spin" size={17}/> : <Save size={17}/>}{saving ? 'Saving profile…' : 'Save profile & configuration'}</button></div>
       </form>
     </div>
   </main>;
