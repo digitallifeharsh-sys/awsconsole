@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { UserRound, ShieldCheck, Save, CheckCircle2, AlertCircle, Eye, EyeOff, LoaderCircle, LockKeyhole } from 'lucide-react';
 import axios from 'axios';
 
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api/v1').replace(/\/$/, '');
+const configuredApiBase = String(import.meta.env.VITE_API_BASE_URL ?? '').trim();
+// A blank VITE_API_BASE_URL must not accidentally send requests to /user-setup.
+const API_BASE_URL = (configuredApiBase || '/api/v1').replace(/\/+$/, '');
 const inputClass = 'w-full rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10';
 const labelClass = 'mb-1.5 block text-sm font-medium text-slate-700';
 const initial = { fullName: '', gender: '', phone: '', email: '', nickname: '', apiKey: '', smsToken: '', callToken: '', smsTemplateId: '', callTemplateId: '', isActive: true };
